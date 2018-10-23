@@ -1,0 +1,70 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button-toggle-appearance-standard {
+  color: white;
+  background-color: #303030;
+}
+
+.mat-button-toggle-checked {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.menu {
+  background-color: #303030;
+}
+
+.sub-menu {
+  background-color: #d0d0d0;
+}
+
+.lol {
+  background-color: rgb(22, 151, 159);
+}
+
+.switch {
+  background-color: rgb(230, 39, 26);
+}
+
+.ps4 {
+  background-color: rgb(0, 120, 201);
+}
+
+.lol-menu {
+  /deep/ .mat-chip-list-wrapper {
+    margin-left: 5px;
+    margin-top: 1px;
+  }
+  .lol-menu-chip {
+    cursor: pointer;
+    background-color: rgb(143, 187, 147);
+  }
+}
+
+.switch-menu {
+  /deep/ .mat-chip-list-wrapper {
+    margin-left: 5px;
+    margin-top: 1px;
+  }
+  .switch-menu-chip {
+    cursor: pointer;
+    background-color: rgb(229, 58, 64);
+  }
+}
+
+.ps4-menu {
+  /deep/ .mat-chip-list-wrapper {
+    margin-left: 5px;
+    margin-top: 1px;
+  }
+  .ps4-menu-chip {
+    cursor: pointer;
+    background-color: rgb(80, 175, 198);
+  }
+}
