@@ -1,5 +1,4 @@
-<app-top-nav (outputType)="setType($event)"></app-top-nav>
-
+<app-header (outputType)="setType($event)" [subMenu]="subMenu"></app-header>
 
 <p>
   <mat-form-field appearance="outline" class="search">
@@ -10,4 +9,6 @@
   </mat-form-field>
 </p>
 
-<app-bottom [type]="type"></app-bottom>
+<router-outlet></router-outlet>
+
+<app-footer [type]="type"></app-footer>
