@@ -1,1 +1,13 @@
-<app-top-nav></app-top-nav>
+<app-top-nav (outputType)="setType($event)"></app-top-nav>
+
+
+<p>
+  <mat-form-field appearance="outline" class="search">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Find the information you want.</mat-hint>
+  </mat-form-field>
+</p>
+
+<app-bottom [type]="type"></app-bottom>
