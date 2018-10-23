@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import {TopNavComponent} from './components/top-nav/top-nav.component';
+import {NgModule} from '@angular/core';
+import {HeaderComponent} from './components/header/header.component';
 import {
   MatChipsModule,
   MatDividerModule,
@@ -10,12 +10,12 @@ import {
 } from '@angular/material';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {CommonModule} from '@angular/common';
-import { BottomComponent } from './components/bottom/bottom.component';
+import {FooterComponent} from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    TopNavComponent,
-    BottomComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -31,8 +31,8 @@ import { BottomComponent } from './components/bottom/bottom.component';
   ],
   providers: [],
   exports: [
-    TopNavComponent,
-    BottomComponent,
+    HeaderComponent,
+    FooterComponent,
     MatToolbarModule,
     MatButtonToggleModule,
     MatIconModule,
@@ -44,4 +44,5 @@ import { BottomComponent } from './components/bottom/bottom.component';
     MatListModule,
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
