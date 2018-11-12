@@ -32,6 +32,17 @@ const appRoutes: Routes = [
             value: 'switch'
           }
         }
+      },
+      {
+        path: 'ps4',
+        loadChildren: './ps4/ps4.module#Ps4Module',
+        data: {
+          nav: {
+            name: 'Playstation4',
+            icon: '',
+            value: 'ps4'
+          }
+        }
       }
     ]
   }
