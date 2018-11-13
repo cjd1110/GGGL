@@ -89,6 +89,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   navigate(path: string) {
     this.changeButton();
     this.path = `/gggl/${path}`;
+    console.log('this path : ', this.path);
     this.router.navigateByUrl(this.path);
   }
 
