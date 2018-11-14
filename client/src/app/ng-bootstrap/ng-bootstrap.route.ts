@@ -11,7 +11,7 @@ const ngBootstrapRoute: Routes = [
         component: PracticeComponent,
         data: {
           nav: {
-            name: 'News',
+            name: 'Practice',
             icon: 'drafts',
             value: 'news'
           }
