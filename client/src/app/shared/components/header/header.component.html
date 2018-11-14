@@ -1,26 +1,28 @@
 <header>
-  <mat-toolbar [color]="toolbarColor">
-    <mat-toolbar-row [ngClass]="type">
-      <img [src]="imgUrl" width="60px" height="48px">
-      <span style="color: white; margin-left: 5px;">GG/GL</span>
-      <span class="example-spacer"></span>
-      <mat-icon style="color: white;" class="example-icon" (click)="clickAccount()">account_circle</mat-icon>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <div class="menu">
-    <mat-button-toggle-group #group="matButtonToggleGroup">
-      <mat-button-toggle *ngFor="let nav of navs;" [value]="nav.data.nav.value" #toggle (click)="navigate(nav.path)">
-        {{nav.data.nav.name}}
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
+  <div class="header">
+    <mat-toolbar [color]="toolbarColor">
+      <mat-toolbar-row [ngClass]="type">
+        <mat-icon style="color: white;">build</mat-icon>
+        <span style="color: white; margin-left: 5px;">GG/GL</span>
+        <span class="example-spacer"></span>
+        <mat-icon style="color: white;" class="example-icon" (click)="clickAccount()">account_circle</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="menu">
+      <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle *ngFor="let nav of navs;" [value]="nav.data.nav.value" #toggle (click)="navigate(nav.path)">
+          {{nav.data.nav.name}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
 
-  <div class="sub-menu">
-    <mat-chip-list [ngClass]="getSubMenuClass('chip-list')">
-      <mat-chip *ngFor="let sub of subMenu;" [ngClass]="getSubMenuClass('chip')" (click)="navigateSubMenu(sub.path)">
-        <mat-icon style="color: white;">{{sub.data.nav.icon}}</mat-icon>
-        <span style="color: white;">{{sub.data.nav.name}}</span>
-      </mat-chip>
-    </mat-chip-list>
+    <div class="sub-menu">
+      <mat-chip-list [ngClass]="getSubMenuClass('chip-list')">
+        <mat-chip *ngFor="let sub of subMenu;" [ngClass]="getSubMenuClass('chip')" (click)="navigateSubMenu(sub.path)">
+          <mat-icon style="color: white;">{{sub.data.nav.icon}}</mat-icon>
+          <span style="color: white;">{{sub.data.nav.name}}</span>
+        </mat-chip>
+      </mat-chip-list>
+    </div>
   </div>
 </header>
