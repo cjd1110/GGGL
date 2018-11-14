@@ -19,7 +19,6 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit, AfterViewInit {
   toolbarColor: string;
   type: string;
-  imgUrl: string;
   path: string;
 
   @Input() subMenu: string;
@@ -49,20 +48,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   }
 
-  changeImage() {
-    switch (this.type) {
-      case 'lol':
-        this.imgUrl = './assets/lol.jpg';
-        break;
-      case 'switch':
-        this.imgUrl = './assets/switch.jpg';
-        break;
-      case 'ps4':
-        this.imgUrl = './assets/ps4.jpg';
-        break;
-    }
-  }
-
   getSubMenuClass(type) {
     let result = null;
     switch (type) {
@@ -78,7 +63,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   changeButton() {
     this.type = this.group.value;
-    this.changeImage();
     this.setOutputType();
   }
 
@@ -89,7 +73,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   navigate(path: string) {
     this.changeButton();
     this.path = `/gggl/${path}`;
-    console.log('this path : ', this.path);
     this.router.navigateByUrl(this.path);
   }
 
