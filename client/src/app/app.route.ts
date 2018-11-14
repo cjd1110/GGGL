@@ -57,7 +57,7 @@ const appRoutes: Routes = [
       },
       {
         path: 'ng-bootstrap',
-        loadChildren: './ng-bootstrap/ng-bootstrap.module#NgBootstrap4Module',
+        loadChildren: './ng-bootstrap/ng-bootstrap.module#NgBootstrapModule',
         data: {
           nav: {
             name: 'Ng-Bootstrap',
