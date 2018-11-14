@@ -43,6 +43,28 @@ const appRoutes: Routes = [
             value: 'ps4'
           }
         }
+      },
+      {
+        path: 'material',
+        loadChildren: './material/material.module#MaterialModule',
+        data: {
+          nav: {
+            name: 'material',
+            icon: '',
+            value: 'material'
+          }
+        }
+      },
+      {
+        path: 'ng-bootstrap',
+        loadChildren: './ng-bootstrap/ng-bootstrap.module#NgBootstrap4Module',
+        data: {
+          nav: {
+            name: 'Ng-Bootstrap',
+            icon: '',
+            value: 'ng-bootstrap'
+          }
+        }
       }
     ]
   }
