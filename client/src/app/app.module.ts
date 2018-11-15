@@ -4,8 +4,8 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AuthComponent} from './auth/auth.component';
-import {SharedModule} from './shared/shared.module';
 import {Route} from './app.route';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,9 @@ import {Route} from './app.route';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     BrowserAnimationsModule,
     Route,
-    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
