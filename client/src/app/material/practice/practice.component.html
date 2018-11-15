@@ -1,3 +1,29 @@
-<p>
-  practice works!
-</p>
+<mat-card>
+  <div>NgRx store 미적용</div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite food" value="Sushi">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+  </form>
+  <div>결과 : 폼에 상태값이 날라간다.</div>
+</mat-card>
+
+<mat-card>
+  <div>NgRx stroe 적용</div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Name" [value]="input?.name" #name
+             (keyup)="addInputText(name.value, description.value)">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Description" [value]="input?.description" #description
+                (keyup)="addInputText(name.value, description.value)"></textarea>
+    </mat-form-field>
+  </form>
+  <div>결과 : 폼에 상태값 유지</div>
+</mat-card>

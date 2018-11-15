@@ -1,6 +1,7 @@
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {HeaderComponent} from './components/header/header.component';
 import {
+  MatCardModule,
   MatChipsModule,
   MatDividerModule,
   MatFormFieldModule,
@@ -28,6 +29,7 @@ import {FooterComponent} from './components/footer/footer.component';
     MatChipsModule,
     MatTabsModule,
     MatListModule,
+    MatCardModule,
   ],
   providers: [],
   exports: [
@@ -42,7 +44,13 @@ import {FooterComponent} from './components/footer/footer.component';
     MatChipsModule,
     MatTabsModule,
     MatListModule,
+    MatCardModule,
   ]
 })
 export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+    }
+  }
 }
