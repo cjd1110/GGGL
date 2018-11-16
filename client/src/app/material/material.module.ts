@@ -18,7 +18,7 @@ import {SharedModule} from '../shared/shared.module';
     }),
   ],
   declarations: [
-    PracticeComponent
+    PracticeComponent,
   ],
   exports: [
     PracticeComponent
