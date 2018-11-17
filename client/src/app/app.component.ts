@@ -21,12 +21,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       if (event instanceof NavigationEnd) {
         let child = this.activatedRoute.firstChild;
         let routeConfig = child.routeConfig;
-        console.log('this.type : ', this.type);
         let module = routeConfig.children.filter(item => item.path === this.type)[0];
         if (module.hasOwnProperty('_loadedConfig')) {
-          console.log('path : ', module);
-          this.subMenu = module['_loadedConfig'].routes[0].children;
-          console.log('subMenu : ', this.subMenu);
+          this.subMenu = module['_loadedConfig'].routes[1].children;
         }
       }
     });

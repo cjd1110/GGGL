@@ -5,6 +5,11 @@ import {PracticeComponent} from './practice/practice.component';
 const ngBootstrapRoute: Routes = [
   {
     path: '',
+    redirectTo: 'practice',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     children: [
       {
         path: 'practice',

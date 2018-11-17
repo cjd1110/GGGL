@@ -5,6 +5,11 @@ import {Ps4NewsComponent} from './ps4-news/ps4-news.component';
 const ps4Route: Routes = [
   {
     path: '',
+    redirectTo: 'news',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     children: [
       {
         path: 'news',

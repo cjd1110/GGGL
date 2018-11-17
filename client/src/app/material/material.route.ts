@@ -5,13 +5,18 @@ import {PracticeComponent} from './practice/practice.component';
 const materialRoute: Routes = [
   {
     path: '',
+    redirectTo: 'practice',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     children: [
       {
-        path: 'news',
+        path: 'practice',
         component: PracticeComponent,
         data: {
           nav: {
-            name: 'News',
+            name: 'Practice',
             icon: 'drafts',
             value: 'news'
           }
