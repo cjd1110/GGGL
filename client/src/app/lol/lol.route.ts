@@ -5,6 +5,11 @@ import {ModuleWithProviders} from '@angular/core';
 const lolRoute: Routes = [
   {
     path: '',
+    redirectTo: 'news',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     children: [
       {
         path: 'news',

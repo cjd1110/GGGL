@@ -5,6 +5,11 @@ import {SwitchNewsComponent} from './switch-news/switch-news.component';
 const switchRoute: Routes = [
   {
     path: '',
+    redirectTo: 'news',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     children: [
       {
         path: 'news',
