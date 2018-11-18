@@ -3,7 +3,7 @@ import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
 import {fromEvent} from 'rxjs';
-import {debounceTime, distinctUntilChanged, filter, map, mergeMap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, map, mergeMap, tap} from 'rxjs/operators';
 import {FormControl} from "@angular/forms";
 
 @Component({
@@ -44,12 +44,22 @@ export class AppComponent implements OnInit, AfterViewInit {
         debounceTime(300), // 300ms 뒤에 데이터 전달
         distinctUntilChanged(), // 특수키가 입력된 경우에는 나오지 않기 위해 중복 데이터 처리
         filter(query => query.trim().length > 0),
+        tap(this.showLoading),
         mergeMap(query => this.http.get(`https://api.github.com/search/users?q=${query}`)),
+        tap(this.hideLoading)
       );
 
     users$.subscribe(res => {
       this.users = res['items'];
     });
+  }
+
+  showLoading() {
+    document.getElementById('loading').style.display = 'block';
+  }
+
+  hideLoading() {
+    document.getElementById('loading').style.display = 'none';
   }
 
   setType(type) {
