@@ -1,6 +1,9 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {HeaderComponent} from './components/header/header.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {CommonModule} from '@angular/common';
 import {
+  MatAutocompleteModule,
   MatCardModule,
   MatChipsModule,
   MatDividerModule,
@@ -9,8 +12,8 @@ import {
   MatInputModule, MatListModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {CommonModule} from '@angular/common';
+
+import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 
 @NgModule({
@@ -30,6 +33,9 @@ import {FooterComponent} from './components/footer/footer.component';
     MatTabsModule,
     MatListModule,
     MatCardModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   exports: [
@@ -45,12 +51,9 @@ import {FooterComponent} from './components/footer/footer.component';
     MatTabsModule,
     MatListModule,
     MatCardModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
-export class SharedModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: SharedModule,
-    }
-  }
-}
+export class SharedModule {}
