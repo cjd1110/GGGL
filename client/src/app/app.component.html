@@ -10,6 +10,11 @@
         <a [href]="user?.html_url" target="_blank">{{user?.login}}</a>
       </mat-option>
     </mat-autocomplete>
+
+    <div id="loading">
+      <i class="fas fa-spinner"></i>
+    </div>
+
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint>Find the information you want.</mat-hint>
   </mat-form-field>
