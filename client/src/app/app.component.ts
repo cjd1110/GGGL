@@ -6,7 +6,7 @@ import {FormControl} from '@angular/forms';
 import {
   debounceTime,
   distinctUntilChanged, finalize,
-  partition, retry,
+  partition, retry, share,
   switchMap,
   tap
 } from 'rxjs/operators';
@@ -48,6 +48,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       .pipe(
         debounceTime(300), // 300ms 뒤에 데이터 전달
         distinctUntilChanged(), // 특수키가 입력된 경우에는 나오지 않기 위해 중복 데이터 처리
+        tap(v => console.log('from keyup$', v)),
+        share()
       );
 
     // 단순히 query만 사용할 경우 type error 가 발생함 Object를 string으로 변환 후 사용
@@ -64,7 +66,8 @@ export class AppComponent implements OnInit, AfterViewInit {
         switchMap(query => this.http.get(`https://api.github.com/search/users?q=${query}`)),
         tap(this.hideLoading),
         retry(2),
-        finalize(this.hideLoading)
+        finalize(this.hideLoading),
+        tap(v => console.log('from user$', v))
       );
 
     users$.subscribe({
@@ -76,7 +79,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     reset$.pipe(
-      tap(v => this.users = [])
+      tap(v => this.users = []),
+      tap(v => console.log('from reset$', v))
     ).subscribe();
   }
 
