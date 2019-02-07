@@ -1,24 +1,24 @@
 <app-header (outputType)="setType($event)" [subMenu]="subMenu"></app-header>
 
-<form>
-  <mat-form-field appearance="outline" class="search">
-    <mat-label>Search</mat-label>
-    <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="searchControl">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let user of users" [value]="user?.login">
-        <img [src]="user?.avatar_url" width="50px" height="50px"/>
-        <a [href]="user?.html_url" target="_blank">{{user?.login}}</a>
-      </mat-option>
-    </mat-autocomplete>
+<!--<form>-->
+  <!--<mat-form-field appearance="outline" class="search">-->
+    <!--<mat-label>Search</mat-label>-->
+    <!--<input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="searchControl">-->
+    <!--<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">-->
+      <!--<mat-option *ngFor="let user of users" [value]="user?.login">-->
+        <!--<img [src]="user?.avatar_url" width="50px" height="50px"/>-->
+        <!--<a [href]="user?.html_url" target="_blank">{{user?.login}}</a>-->
+      <!--</mat-option>-->
+    <!--</mat-autocomplete>-->
 
-    <div id="loading">
-      <i class="fas fa-spinner"></i>
-    </div>
+    <!--<div id="loading">-->
+      <!--<i class="fas fa-spinner"></i>-->
+    <!--</div>-->
 
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Find the information you want.</mat-hint>
-  </mat-form-field>
-</form>
+    <!--<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+    <!--<mat-hint>Find the information you want.</mat-hint>-->
+  <!--</mat-form-field>-->
+<!--</form>-->
 
 <router-outlet></router-outlet>
 
