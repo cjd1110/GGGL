@@ -15,6 +15,8 @@ import {
 
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
+import {AgWordCloudModule} from 'angular4-word-cloud';
+import {TagCloudModule} from 'angular-tag-cloud-module';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {FooterComponent} from './components/footer/footer.component';
     MatAutocompleteModule,
     ReactiveFormsModule,
     FormsModule,
+    AgWordCloudModule.forRoot(),
+    TagCloudModule
   ],
   providers: [],
   exports: [
@@ -54,6 +58,8 @@ import {FooterComponent} from './components/footer/footer.component';
     MatAutocompleteModule,
     ReactiveFormsModule,
     FormsModule,
+    AgWordCloudModule,
+    TagCloudModule
   ]
 })
 export class SharedModule {}

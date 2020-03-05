@@ -10,6 +10,8 @@ import {
   switchMap,
   tap
 } from 'rxjs/operators';
+import {AgWordCloudData} from 'angular4-word-cloud';
+import {CloudData, CloudOptions, ZoomOnHoverOptions} from 'angular-tag-cloud-module';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,35 @@ import {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  options: CloudOptions = {
+    // if width is between 0 and 1 it will be set to the size of the upper element multiplied by the value
+    width : 1000,
+    height : 400,
+    overflow: false,
+  };
+
+  data: CloudData[] = [
+    {text: '1', weight: 0.1},
+    {text: '2', weight: 0.2},
+    {text: '3', weight: 0.3},
+    {text: '3', weight: 0.3},
+    {text: '3', weight: 0.3444},
+    {text: '3', weight: 0.3888},
+    {text: '3', weight: 0.3000},
+    {text: '3', weight: 0.3324},
+    {text: '3', weight: 0.3},
+    {text: '4', weight: 0.4},
+    {text: '5', weight: 0.5},
+    {text: '6', weight: 0.6},
+    {text: '7', weight: 0.7},
+    {text: '8', weight: 0.8},
+  ];
+  zoomOnHoverOptions: ZoomOnHoverOptions = {
+    scale: 1.3, // Elements will become 130 % of current zize on hover
+    transitionTime: 1.2, // it will take 1.2 seconds until the zoom level defined in scale property has been reached
+    delay: 0.1 // Zoom will take affect after 0.8 seconds
+  };
+
   type = null;
   subMenu: any[] = [];
   users = [];

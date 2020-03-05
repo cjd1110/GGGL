@@ -4,20 +4,20 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
-import {AuthComponent} from './auth/auth.component';
 import {Route} from './app.route';
 import {SharedModule} from './shared/shared.module';
+import {AgWordCloudModule} from 'angular4-word-cloud';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
   ],
   imports: [
     BrowserModule,
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AgWordCloudModule.forRoot(),
     Route,
   ],
   providers: [],

@@ -20,6 +20,15 @@
   <!--</mat-form-field>-->
 <!--</form>-->
 
+<angular-tag-cloud [data]="data" class="custom-css"
+                   [width]="options.width"
+                   [height]="options.height"
+                   [randomizeAngle]="true"
+                   [zoomOnHover]="zoomOnHoverOptions"
+                   [overflow]="options.overflow"
+>
+
+</angular-tag-cloud>
 <router-outlet></router-outlet>
 
 <app-footer [type]="type"></app-footer>
